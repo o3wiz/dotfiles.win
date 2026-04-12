@@ -7,6 +7,9 @@
 			"Packages" :
 			[
 				{
+					"PackageIdentifier" : "Git.Git"
+				},
+				{
 					"PackageIdentifier" : "JanDeDobbeleer.OhMyPosh",
 					"Version" : "29.9.4"
 				},
