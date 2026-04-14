@@ -8,7 +8,6 @@
   {
     "context": "Editor",
     "bindings": {
-      // lines navigation
       "ctrl-n": "editor::MoveDown",
       "ctrl-p": "editor::MoveUp",
       "ctrl-a": [
@@ -16,28 +15,20 @@
         { "stop_at_soft_wraps": true, "stop_at_indent": true }
       ],
       "ctrl-e": ["editor::MoveToEndOfLine", { "stop_at_soft_wraps": true }],
-      // word navigation
       "alt-f": "editor::MoveToNextWordEnd",
       "alt-b": "editor::MoveToPreviousWordStart",
-      // subword navigation
       "ctrl-alt-f": "editor::MoveToNextSubwordEnd",
       "ctrl-alt-b": "editor::MoveToPreviousSubwordStart",
-      // node selection
       "alt-}": "editor::SelectLargerSyntaxNode",
       "alt-{": "editor::SelectSmallerSyntaxNode",
-      // line selection
       "ctrl-L": "editor::SelectUp",
-      // word selection
       "alt->": ["editor::SelectNext", { "replace_newest": false }],
       "alt-<": ["editor::SelectPrevious", { "replace_newest": false }],
       "alt-shift-;": "editor::SelectAllMatches",
-      // relocate lines
       "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown",
-      // duplicate lines
       "alt-K": "editor::DuplicateLineUp",
       "alt-J": "editor::DuplicateLineDown",
-      // word deletion
       "alt-h": [
         "editor::DeleteToPreviousWordStart",
         { "ignore_newlines": false, "ignore_brackets": false }
@@ -46,13 +37,10 @@
         "editor::DeleteToNextWordEnd",
         { "ignore_newlines": false, "ignore_brackets": false }
       ],
-      // subword deletion
       "ctrl-alt-h": "editor::DeleteToPreviousSubwordStart",
       "ctrl-alt-d": "editor::DeleteToNextSubwordEnd",
-      // new line
       "alt-O": "editor::NewlineAbove",
       "alt-o": "editor::NewlineBelow",
-      // editor navigation
       "alt-G": "editor::MoveToBeginning",
       "alt-g": "editor::MoveToEnd"
     }
