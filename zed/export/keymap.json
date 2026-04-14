@@ -110,7 +110,23 @@
       "ctrl-w ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-w ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-w ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-w ctrl-l": "workspace::ActivatePaneRight"
+      "ctrl-w ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-w alt-h": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "left", "focus": true, "clone": false }
+      ],
+      "ctrl-w alt-j": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "down", "focus": true, "clone": false }
+      ],
+      "ctrl-w alt-k": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "up", "focus": true, "clone": false }
+      ],
+      "ctrl-w alt-l": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "right", "focus": true, "clone": false }
+      ]
     }
   },
   {
@@ -162,11 +178,11 @@
   },
   {
     "context": "ProjectPanel && not_editing",
-    "unbind": {
-      "alt-n": "project_panel::NewDirectory"
-    },
     "bindings": {
-      "ctrl-y": "project_panel::Open"
+      "[": "project_panel::CollapseSelectedEntry",
+      "ctrl-[": "project_panel::CollapseSelectedEntry",
+      "]": "project_panel::ExpandSelectedEntry",
+      "ctrl-]": "project_panel::ExpandSelectedEntry"
     }
   }
 ]
