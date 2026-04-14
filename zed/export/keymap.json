@@ -2,8 +2,8 @@
   {
     "context": "showing_completions",
     "bindings": {
-      "ctrl-y": "editor::ConfirmCompletion",
-    },
+      "ctrl-y": "editor::ConfirmCompletion"
+    }
   },
   {
     "context": "Editor",
@@ -13,7 +13,7 @@
       "ctrl-p": "editor::MoveUp",
       "ctrl-a": [
         "editor::MoveToBeginningOfLine",
-        { "stop_at_soft_wraps": true, "stop_at_indent": true },
+        { "stop_at_soft_wraps": true, "stop_at_indent": true }
       ],
       "ctrl-e": ["editor::MoveToEndOfLine", { "stop_at_soft_wraps": true }],
       // word navigation
@@ -40,11 +40,11 @@
       // word deletion
       "alt-h": [
         "editor::DeleteToPreviousWordStart",
-        { "ignore_newlines": false, "ignore_brackets": false },
+        { "ignore_newlines": false, "ignore_brackets": false }
       ],
       "alt-d": [
         "editor::DeleteToNextWordEnd",
-        { "ignore_newlines": false, "ignore_brackets": false },
+        { "ignore_newlines": false, "ignore_brackets": false }
       ],
       // subword deletion
       "ctrl-alt-h": "editor::DeleteToPreviousSubwordStart",
@@ -54,20 +54,20 @@
       "alt-o": "editor::NewlineBelow",
       // editor navigation
       "alt-G": "editor::MoveToBeginning",
-      "alt-g": "editor::MoveToEnd",
-    },
+      "alt-g": "editor::MoveToEnd"
+    }
   },
   {
     "context": "Editor && in_snippet && has_next_tabstop && !showing_completions",
     "bindings": {
-      "ctrl-k": "editor::NextSnippetTabstop",
-    },
+      "ctrl-k": "editor::NextSnippetTabstop"
+    }
   },
   {
     "context": "Editor && in_snippet && has_previous_tabstop && !showing_completions",
     "bindings": {
-      "ctrl-j": "editor::PreviousSnippetTabstop",
-    },
+      "ctrl-j": "editor::PreviousSnippetTabstop"
+    }
   },
   {
     "bindings": {
@@ -75,28 +75,28 @@
       "ctrl-n": "menu::SelectNext",
       "ctrl-y": "menu::Confirm",
       "alt-G": "menu::SelectFirst",
-      "alt-g": "menu::SelectLast",
-    },
+      "alt-g": "menu::SelectLast"
+    }
   },
   {
     "context": "Editor && showing_signature_help",
     "bindings": {
       "ctrl-p": "editor::SignatureHelpPrevious",
-      "ctrl-n": "editor::SignatureHelpNext",
-    },
+      "ctrl-n": "editor::SignatureHelpNext"
+    }
   },
   {
     "context": "Editor && (showing_code_actions || showing_completions)",
     "bindings": {
       "ctrl-p": "editor::ContextMenuPrevious",
-      "ctrl-n": "editor::ContextMenuNext",
-    },
+      "ctrl-n": "editor::ContextMenuNext"
+    }
   },
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-<": "file_finder::Toggle",
-    },
+      "ctrl-<": "file_finder::Toggle"
+    }
   },
   {
     "context": "Workspace",
@@ -110,21 +110,21 @@
       "ctrl-w ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-w ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-w ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-w ctrl-l": "workspace::ActivatePaneRight",
-    },
+      "ctrl-w ctrl-l": "workspace::ActivatePaneRight"
+    }
   },
   {
     "context": "ProjectPanel",
     "bindings": {
-      "%": "project_panel::NewFile",
-    },
+      "%": "project_panel::NewFile"
+    }
   },
   {
     "context": "Terminal",
     "bindings": {
       "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"],
-      "ctrl-n": ["terminal::SendKeystroke", "ctrl-n"],
-    },
+      "ctrl-n": ["terminal::SendKeystroke", "ctrl-n"]
+    }
   },
   {
     "context": "Pane",
@@ -132,34 +132,41 @@
       "ctrl-w": [
         "pane::CloseActiveItem",
         {
-          "close_pinned": false,
-        },
-      ],
+          "close_pinned": false
+        }
+      ]
     },
     "bindings": {
       "ctrl-w ctrl-c": [
         "pane::CloseActiveItem",
         {
-          "close_pinned": false,
-        },
+          "close_pinned": false
+        }
       ],
       "ctrl-w c": [
         "pane::CloseActiveItem",
         {
-          "close_pinned": false,
-        },
-      ],
-    },
+          "close_pinned": false
+        }
+      ]
+    }
   },
   {
     "context": "ProjectPanel",
     "unbind": {
-      "alt-n": "project_panel::NewDirectory",
+      "alt-n": "project_panel::NewDirectory"
     },
     "bindings": {
-      "alt-n": "project_panel::NewFile",
-      "ctrl-y": "project_panel::ExpandSelectedEntry",
-      "ctrl-Y": "project_panel::CollapseSelectedEntry",
-    },
+      "alt-n": "project_panel::NewFile"
+    }
   },
+  {
+    "context": "ProjectPanel && not_editing",
+    "unbind": {
+      "alt-n": "project_panel::NewDirectory"
+    },
+    "bindings": {
+      "ctrl-y": "project_panel::Open"
+    }
+  }
 ]
