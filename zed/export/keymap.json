@@ -1,0 +1,165 @@
+[
+  {
+    "context": "showing_completions",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // lines navigation
+      "ctrl-n": "editor::MoveDown",
+      "ctrl-p": "editor::MoveUp",
+      "ctrl-a": [
+        "editor::MoveToBeginningOfLine",
+        { "stop_at_soft_wraps": true, "stop_at_indent": true },
+      ],
+      "ctrl-e": ["editor::MoveToEndOfLine", { "stop_at_soft_wraps": true }],
+      // word navigation
+      "alt-f": "editor::MoveToNextWordEnd",
+      "alt-b": "editor::MoveToPreviousWordStart",
+      // subword navigation
+      "ctrl-alt-f": "editor::MoveToNextSubwordEnd",
+      "ctrl-alt-b": "editor::MoveToPreviousSubwordStart",
+      // node selection
+      "alt-}": "editor::SelectLargerSyntaxNode",
+      "alt-{": "editor::SelectSmallerSyntaxNode",
+      // line selection
+      "ctrl-L": "editor::SelectUp",
+      // word selection
+      "alt->": ["editor::SelectNext", { "replace_newest": false }],
+      "alt-<": ["editor::SelectPrevious", { "replace_newest": false }],
+      "alt-shift-;": "editor::SelectAllMatches",
+      // relocate lines
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown",
+      // duplicate lines
+      "alt-K": "editor::DuplicateLineUp",
+      "alt-J": "editor::DuplicateLineDown",
+      // word deletion
+      "alt-h": [
+        "editor::DeleteToPreviousWordStart",
+        { "ignore_newlines": false, "ignore_brackets": false },
+      ],
+      "alt-d": [
+        "editor::DeleteToNextWordEnd",
+        { "ignore_newlines": false, "ignore_brackets": false },
+      ],
+      // subword deletion
+      "ctrl-alt-h": "editor::DeleteToPreviousSubwordStart",
+      "ctrl-alt-d": "editor::DeleteToNextSubwordEnd",
+      // new line
+      "alt-O": "editor::NewlineAbove",
+      "alt-o": "editor::NewlineBelow",
+      // editor navigation
+      "alt-G": "editor::MoveToBeginning",
+      "alt-g": "editor::MoveToEnd",
+    },
+  },
+  {
+    "context": "Editor && in_snippet && has_next_tabstop && !showing_completions",
+    "bindings": {
+      "ctrl-k": "editor::NextSnippetTabstop",
+    },
+  },
+  {
+    "context": "Editor && in_snippet && has_previous_tabstop && !showing_completions",
+    "bindings": {
+      "ctrl-j": "editor::PreviousSnippetTabstop",
+    },
+  },
+  {
+    "bindings": {
+      "ctrl-p": "menu::SelectPrevious",
+      "ctrl-n": "menu::SelectNext",
+      "ctrl-y": "menu::Confirm",
+      "alt-G": "menu::SelectFirst",
+      "alt-g": "menu::SelectLast",
+    },
+  },
+  {
+    "context": "Editor && showing_signature_help",
+    "bindings": {
+      "ctrl-p": "editor::SignatureHelpPrevious",
+      "ctrl-n": "editor::SignatureHelpNext",
+    },
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "ctrl-p": "editor::ContextMenuPrevious",
+      "ctrl-n": "editor::ContextMenuNext",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-<": "file_finder::Toggle",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-p": null,
+      "ctrl-n": null,
+      "ctrl-w h": "workspace::ActivatePaneLeft",
+      "ctrl-w j": "workspace::ActivatePaneDown",
+      "ctrl-w k": "workspace::ActivatePaneUp",
+      "ctrl-w l": "workspace::ActivatePaneRight",
+      "ctrl-w ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-w ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-w ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-w ctrl-l": "workspace::ActivatePaneRight",
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "%": "project_panel::NewFile",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"],
+      "ctrl-n": ["terminal::SendKeystroke", "ctrl-n"],
+    },
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "ctrl-w": [
+        "pane::CloseActiveItem",
+        {
+          "close_pinned": false,
+        },
+      ],
+    },
+    "bindings": {
+      "ctrl-w ctrl-c": [
+        "pane::CloseActiveItem",
+        {
+          "close_pinned": false,
+        },
+      ],
+      "ctrl-w c": [
+        "pane::CloseActiveItem",
+        {
+          "close_pinned": false,
+        },
+      ],
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "unbind": {
+      "alt-n": "project_panel::NewDirectory",
+    },
+    "bindings": {
+      "alt-n": "project_panel::NewFile",
+      "ctrl-y": "project_panel::ExpandSelectedEntry",
+      "ctrl-Y": "project_panel::CollapseSelectedEntry",
+    },
+  },
+]

@@ -1,0 +1,28 @@
+{
+  "git_panel": {
+    "tree_view": true
+  },
+  "diff_view_style": "unified",
+  "project_panel": {
+    "auto_fold_dirs": false,
+    "dock": "right",
+    "entry_spacing": "comfortable"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "terminal": {
+    "dock": "bottom"
+  },
+  "show_whitespaces": "boundary",
+  "cursor_blink": false,
+  "cursor_shape": "block",
+  "disable_ai": true,
+  "colorize_brackets": true,
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware",
+    "background_coloring": "indent_aware"
+  },
+  "format_on_save": "off",
+  "vertical_scroll_margin": 10
+}
