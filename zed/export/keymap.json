@@ -83,14 +83,10 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-<": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
+      "alt-shift-r": null,
       "ctrl-p": null,
       "ctrl-n": null,
+      "ctrl-<": "file_finder::Toggle",
       "ctrl-w h": "workspace::ActivatePaneLeft",
       "ctrl-w j": "workspace::ActivatePaneDown",
       "ctrl-w k": "workspace::ActivatePaneUp",
